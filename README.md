@@ -1,16 +1,39 @@
-# redux-hover
+# react-redux-hover
 
-[![Travis][build-badge]][build]
-[![npm package][npm-badge]][npm]
-[![Coveralls][coveralls-badge]][coveralls]
+react-redux-hover is a small and simple module to manage hover effect on react component.
 
-Describe redux-hover here.
+#### 1. Get Started
+#### 2. Make your own implementation
 
-[build-badge]: https://img.shields.io/travis/user/repo/master.png?style=flat-square
-[build]: https://travis-ci.org/user/repo
+## Get Started :
 
-[npm-badge]: https://img.shields.io/npm/v/npm-package.png?style=flat-square
-[npm]: https://www.npmjs.org/package/npm-package
+``` javascript
+import { HoverEffect, hover } from 'react-redux-hover';
+import { combineReducers, createStore } from 'redux';
+import { Provider } from 'react-redux';
+import { render } from 'react-dom'
 
-[coveralls-badge]: https://img.shields.io/coveralls/user/repo/master.png?style=flat-square
-[coveralls]: https://coveralls.io/github/user/repo
+const store = createStore(combineReducers({
+  // Import 'hover' from react-redux-hover into your reducers
+  hover
+}));
+
+const App = () => (
+    <Provider store={store}>
+        <HoverEffect id="AnUniqueIdentifier">
+        {
+            show => //show is a boolean.
+                <div style={{
+                    backgroundColor: show ? 'red' : 'blue'
+                }}>
+                    Hello world!
+                </div>
+        }
+)
+
+render(<App/>, document.querySelector('#app'))
+
+```
+
+The hoverEffect is a component who return a callback function with a parameters to manage hover effect.
+(here ```show```)
