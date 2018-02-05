@@ -1,6 +1,6 @@
 {
   "name": "react-redux-hover",
-  "version": "1.0.9-alpha",
+  "version": "1.1.2-alpha",
   "description": "redux-hover React component",
   "main": "lib/index.js",
   "module": "es/index.js",
@@ -21,10 +21,8 @@
   "dependencies": {
     "prop-types": "^15.5.10",
     "react-redux": "^5.0.6",
-    "redux": "^3.7.2"
-  },
-  "peerDependencies": {
-    "react": "^15.x"
+    "redux": "^3.7.2",
+    "react": "^15.6.1"
   },
   "devDependencies": {
     "nwb": "0.18.x",
